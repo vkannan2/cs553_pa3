@@ -10,11 +10,10 @@ import com.google.appengine.tools.cloudstorage.GcsInputChannel;
 import com.google.appengine.tools.cloudstorage.GcsOutputChannel;
 import com.google.appengine.tools.cloudstorage.GcsService;
 import com.google.appengine.tools.cloudstorage.GcsServiceFactory;
-import com.google.appengine.tools.cloudstorage.RetryParams;
 
 public class CloudStorageService {
 	private final GcsService gcsService =
-		      GcsServiceFactory.createGcsService(RetryParams.getDefaultInstance());
+		      GcsServiceFactory.createGcsService();
 	
 	public void writeToFile(GcsFilename fileName, byte[] content) throws IOException {
 	    GcsOutputChannel outputChannel =
